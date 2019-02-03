@@ -1,5 +1,5 @@
 // 空氣指標API
-// https://opendata.epa.gov.tw/api/v1/AQI?$skip=0&$top=1000&$format=json
+// http://opendata.epa.gov.tw/ws/Data/AQI/?$format=json
 
 var app = new Vue({
     el: '#content',
@@ -57,7 +57,7 @@ var app = new Vue({
     created() {
         var vm = this;
         // call api get data
-        axios.get('http://opendata2.epa.gov.tw/AQI.json').then(function (res) {
+        axios.get('https://api-proxy.noob.tw/http://opendata.epa.gov.tw/ws/Data/AQI/?$format=json').then(function (res) {
             console.log(res.data);
             vm.aqiDatas = res.data;
             vm.currentAqiDatas = vm.getCityAqiDataByName(vm.currentSelectCity);
