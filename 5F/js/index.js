@@ -57,7 +57,7 @@ var app = new Vue({
     created() {
         var vm = this;
         // call api get data
-        axios.get('https://api-proxy.noob.tw/http://opendata.epa.gov.tw/ws/Data/AQI/?$format=json').then(function (res) {
+        axios.get('https://cors-anywhere.herokuapp.com/http://opendata.epa.gov.tw/ws/Data/AQI/?$format=json').then(function (res) {
             console.log(res.data);
             vm.aqiDatas = res.data;
             vm.currentAqiDatas = vm.getCityAqiDataByName(vm.currentSelectCity);
